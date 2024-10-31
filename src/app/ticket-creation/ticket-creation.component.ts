@@ -18,14 +18,14 @@ export class TicketCreationComponent {
   assignedTo: number | null = null; 
   priorities = ['Faible', 'Normal', 'Élevé'];
   users: { id: number, name: string }[] = [];  
+  errorMessage: string = '';
 
   constructor(private http: HttpClient, private router: Router) {
     this.loadUsers();  
   }
 
   loadUsers() {
-    this.http.get<{ id: number, name: string }[]>('http://localhost:3000/users', 
-    )
+    this.http.get<{ id: number, name: string }[]>('http://localhost:3000/users')
     .subscribe({
       next: (data) => {
         this.users = data;
@@ -37,6 +37,13 @@ export class TicketCreationComponent {
   }
 
   createticket() {
+    if (!this.description.trim()) {
+      this.errorMessage = 'La description est obligatoire.';
+      return; // Empêche la soumission si la description est vide
+    }
+    
+    this.errorMessage = ''; // Réinitialise le message d'erreur
+
     const ticketData = {
       description: this.description,
       priority: this.priority,

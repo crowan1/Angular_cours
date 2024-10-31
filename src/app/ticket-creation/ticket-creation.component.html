@@ -10,6 +10,7 @@
                 name="description"
                 required
             ></textarea>
+            <div *ngIf="errorMessage" class="text-danger">{{ errorMessage }}</div>
         </div>
 
         <div class="mb-3">

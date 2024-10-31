@@ -11,21 +11,19 @@
         list-style-type: none;
         padding: 0;
         display: flex;
-        flex-direction: row;
+        flex-wrap: wrap; 
         gap: 30px;
         width: 100% !important;
 
         &__item {
-            flex: 1;  
+            flex: 0 1 calc(33.33% - 30px); 
             border-radius: 5px;
             padding: 15px;
             margin-bottom: 20px; 
             transition: transform 0.2s;
-            width: 30% !important;
 
             &:hover {
                 transform: translateY(-2px);
-                background-color: #ff9800;
             }
         }
     }
@@ -38,6 +36,7 @@
         gap: 2px;
         border-radius: 5px;
         flex: 1;
+
         & > div {
             margin-bottom: 8px;
         }
@@ -63,4 +62,8 @@
         color: #fff; 
         font-weight: bold;
     }
+}
+
+.ticket-list__details[_ngcontent-ng-c651973997] {
+    width: 500px;
 }
