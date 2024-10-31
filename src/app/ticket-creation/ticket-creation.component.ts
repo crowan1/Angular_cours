@@ -24,7 +24,6 @@ export class TicketCreationComponent {
   }
 
   loadUsers() {
-    const token = localStorage.getItem('jwt');  
     this.http.get<{ id: number, name: string }[]>('http://localhost:3000/users', 
     )
     .subscribe({
@@ -47,7 +46,7 @@ export class TicketCreationComponent {
     this.http.post('http://localhost:3000/createtickets', ticketData)
     .subscribe({
       next: (response) => {
-        console.log('Ticket créé', response);
+        console.log('Ticket créé');
         this.router.navigate(['/tickets']);
       },
       error: (error) => {
