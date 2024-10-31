@@ -6,22 +6,22 @@
         <li *ngFor="let ticket of tickets" class="ticket-list__item">
             <div class="ticket-list__details">
                 <div class="ticket-list__description">
-                    <strong>Description:</strong> {{ ticket.description }}
+                    <strong>Description : </strong> {{ ticket.description }}
                 </div>
                 <div class="ticket-list__priority">
-                    <strong>Priorité:</strong> <span class="priority-badge">{{ ticket.priority }}</span>
+                    <strong>Priorité : </strong> <span class="priority-badge">{{ ticket.priority }}</span>
                 </div>
                 <div class="ticket-list__created-at">
-                    <strong>Date de création:</strong> {{ ticket.created_at }}
+                    <strong>Date de création : </strong> {{ ticket.created_at }}
                 </div>
                 <div class="ticket-list__status">
-                    <strong>Status:</strong> <span class="status-badge">{{ ticket.status }}</span>
+                    <strong>Status : </strong> <span class="status-badge">{{ ticket.status }}</span>
                 </div>
                 <div class="ticket-list__assigned-to">
-                    <strong>Assigné à:</strong> {{ ticket.assigned_to }}
+                    <strong>Assigné à : </strong> {{ ticket.assigned_to }}
                 </div>
                 <div *ngIf="ticket.resolved_at" class="ticket-list__resolved-at">
-                    <strong>Date de résolution:</strong> {{ ticket.resolved_at }}
+                    <strong>Date de résolution : </strong> {{ ticket.resolved_at }}
                 </div>
             </div>
         </li>

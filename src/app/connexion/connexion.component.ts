@@ -44,7 +44,6 @@ export class ConnexionComponent {
       this.http
         .post('http://localhost:3000/login', utilisateur)
         .subscribe((reponse: any) => {
-          console.log(reponse.jwt);
           localStorage.setItem('jwt', reponse.jwt);
           this.connexionService.connecte = true;
           this.router.navigateByUrl('/tickets');
