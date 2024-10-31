@@ -7,7 +7,7 @@ import { utilisateurConnecteGuard } from './services/utilisateur-connecte.guard'
 
 export const routes: Routes = [
   {
-    path: 'accueil',
+    path: 'tickets',
     component: AccueilComponent,
     canActivate: [utilisateurConnecteGuard],
   },

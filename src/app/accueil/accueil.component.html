@@ -1,0 +1,21 @@
+<div class="ticket-list">
+    <h2>Liste des Tickets</h2>
+    <ul>
+      <li *ngFor="let ticket of tickets">
+        <div>
+          <strong>Description:</strong> {{ ticket.description }}
+        </div>
+        <div>
+          <strong>Priorité:</strong> {{ ticket.priority }}
+        </div>
+        <div>
+          <strong>Date de création:</strong> {{ ticket.created_at }}
+        </div>
+        <div>
+          <strong>Status:</strong> {{ ticket.status }}
+        </div>
+        <hr />
+      </li>
+    </ul>
+  </div>
+  
