@@ -79,8 +79,8 @@ CREATE TABLE `utilisateur` (
 
 INSERT INTO `utilisateur` (`id`, `email`, `password`, `role`) VALUES
 (1, 'a@a.com', 'root', 'administrateur'),
-(2, 'b@b.com', 'root\r\n', 'chef_de_service'),
-(3, 'c@c.com', 'root\r\n', 'employe');
+(2, 'b@b.com', 'root', 'chef_de_service'),
+(3, 'c@c.com', 'root', 'employe');
 
 --
 -- Index pour les tables déchargées
