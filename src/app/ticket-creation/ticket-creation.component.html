@@ -1,0 +1,49 @@
+<div class="container">
+    <h2 class="header">Créer un nouveau ticket</h2>
+    <form (ngSubmit)="createticket()" class="ticket-form">
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea
+                id="description"
+                class="form-control"
+                [(ngModel)]="description"
+                name="description"
+                required
+            ></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="priority" class="form-label">Priorité</label>
+            <select
+                id="priority"
+                class="form-select"
+                [(ngModel)]="priority"
+                name="priority"
+            >
+                <option *ngFor="let prio of priorities" [value]="prio">
+                    {{ prio }}
+                </option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="assignedTo" class="form-label">Attribuer à</label>
+            <select
+                id="assignedTo"
+                class="form-select"
+                [(ngModel)]="assignedTo"
+                name="assignedTo"
+                required
+            >
+                <option *ngFor="let user of users" [value]="user.id">
+                    {{ user.name }}
+                </option>
+            </select>
+        </div>
+
+        <div class="button-group">
+            <button type="submit" class="btn btn-primary">Créer Ticket</button>
+            <a routerLink="/tickets" class="btn btn-secondary">Annuler</a>
+        </div>
+    </form>
+</div>

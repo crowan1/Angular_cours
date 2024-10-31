@@ -14,8 +14,13 @@
         <div>
           <strong>Status:</strong> {{ ticket.status }}
         </div>
+        <div>
+          <strong>Assigné à:</strong> {{ ticket.assigned_to }}
+        </div>
+        <div *ngIf="ticket.resolved_at">
+          <strong>Date de résolution:</strong> {{ ticket.resolved_at }}
+        </div>
         <hr />
       </li>
     </ul>
-  </div>
-  
+</div>
